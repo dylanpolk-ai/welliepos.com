@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wellie — The bar POS built for speed</title>
+<meta name="description" content="Wellie is a fast iPad point-of-sale for hotel bars, restaurants, and nightlife. Coming soon.">
+<meta name="theme-color" content="#F7F1E3">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Nunito";src:url("nunito.woff2") format("woff2");font-weight:200 1000;font-display:swap}
+:root{--green:#1F4D36;--cherry:#E3262F;--cream:#F7F1E3}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--cream);color:var(--green);font-family:"Nunito",ui-rounded,"SF Pro Rounded","Quicksand",system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased}
+main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem}
+h1{font-weight:900;font-size:clamp(4.5rem,18vw,10rem);line-height:1;letter-spacing:-.03em}
+.i{position:relative;display:inline-block}
+.cherry{position:absolute;left:50%;top:-.1em;width:.36em;height:.46em;transform:translateX(-46%);overflow:visible}
+.tag{margin-top:1.4rem;font-size:clamp(1.15rem,3.6vw,1.6rem);font-weight:800}
+.soon{margin-top:.6rem;font-size:clamp(1rem,3vw,1.2rem);font-weight:600;opacity:.75}
+.rule{width:3rem;height:4px;border-radius:2px;background:var(--cherry);margin:1.8rem auto 0}
+footer{text-align:center;padding:1.5rem;font-size:.9rem;font-weight:600;opacity:.6}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<main>
+  <h1><span class="sr">wellie</span><span aria-hidden="true">well<span class="i">ı<svg class="cherry" viewBox="0 0 36 46" aria-hidden="true"><path d="M17 26 Q19 10 31 3" fill="none" stroke="#1F4D36" stroke-width="3.2" stroke-linecap="round"/><circle cx="16" cy="31" r="12" fill="#E3262F"/><circle cx="11.5" cy="27" r="3" fill="#fff" opacity=".35"/></svg></span>e</span></h1>
+  <p class="tag">The bar POS built for speed.</p>
+  <p class="soon">Coming soon.</p>
+  <div class="rule"></div>
+</main>
+<footer>© 2026 Wellie</footer>
+</body>
+</html>
