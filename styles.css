@@ -66,7 +66,10 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:12px;paddi
 .brand span{font-family:var(--round);font-weight:900;font-size:1.6rem;letter-spacing:-.02em;color:var(--heading)}
 .navlink{font-size:.95rem;font-weight:600;color:var(--heading);text-decoration:none;padding:10px 16px;border:1px solid var(--line);border-radius:999px;transition:background .2s}
 .navlink:hover{background:var(--s2)}
-.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;padding:56px 0 88px}
+.hero-band{position:relative;isolation:isolate}
+.hero-shade{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;display:block}
+.hero-band .wrap{position:relative;z-index:1}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;padding:56px 0 88px}
 .pill{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--pill-bg);border:1px solid var(--pill-line);padding:6px 12px;border-radius:999px}
 .pill i{width:7px;height:7px;border-radius:50%;background:var(--cherry);display:block}
 h1{font-family:var(--round);font-weight:900;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.04;letter-spacing:-.03em;color:var(--heading);margin:22px 0 20px}
@@ -102,7 +105,8 @@ figcaption b{color:var(--text);font-weight:600}
 .story ul{list-style:none;margin-top:6px}
 .story li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--text)}
 .story li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--cherry)}
-.demo{text-align:center;background:var(--demo-bg);border:1px solid var(--demo-line);border-radius:28px;padding:64px 24px}
+.demo{position:relative;overflow:hidden;text-align:center;background:radial-gradient(420px 180px at 82% -20%,rgba(227,38,47,.18),transparent 70%),var(--demo-bg);border:1px solid var(--demo-line);border-radius:28px;padding:80px 32px;box-shadow:0 40px 80px -48px rgba(227,38,47,.45)}
+.demo::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--cherry),transparent)}
 .demo h2{margin:0 auto}
 .demo p{color:var(--muted);max-width:32rem;margin:16px auto 0;font-size:1.05rem}
 .demo .ctas{justify-content:center}
@@ -136,6 +140,12 @@ footer a:hover{color:var(--heading)}
   .demo{padding:44px 20px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .card,.shots figure,.story li{animation:wellie-rise linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+  }
+}
+@keyframes wellie-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 .prose{max-width:40rem}
 .prose p,.prose li{color:var(--muted);font-size:1.05rem;margin-top:14px}
